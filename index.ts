@@ -6,7 +6,6 @@ consola.setConfig({
   showTimestamp: true,
   emojis: true,
   fileTracing: true,
-  fontSize: 'large',
 });
 
 // ✅ Basic Logs

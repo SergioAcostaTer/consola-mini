@@ -1,6 +1,6 @@
 {
   "name": "consola-mini",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A zero-dependency, colorful and minimal console logger for Node.js backends.",
   "main": "dist/log.js",
   "types": "dist/log.d.ts",
