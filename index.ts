@@ -1,8 +1,8 @@
-import { log } from "./src/log";
+import { consola } from "./src/log";
 
 
 // 🔧 Global Config
-log.setConfig({
+consola.setConfig({
   showTimestamp: true,
   emojis: true,
   fileTracing: true,
@@ -10,34 +10,34 @@ log.setConfig({
 });
 
 // ✅ Basic Logs
-log.info("Server started");
-log.warn("Deprecated API usage");
-log.error("Unhandled exception");
-log.debug("Fetching data");
+consola.info("Server started");
+consola.warn("Deprecated API usage");
+consola.error("Unhandled exception");
+consola.debug("Fetching data");
 
 // ✅ With Meta
-log.info("User login", { userId: 1, name: "Alice" });
-log.error("DB Error", { code: 500, error: "Connection refused" });
-log.debug("Query result", { count: 42, rows: [1, 2, 3] });
+consola.info("User login", { userId: 1, name: "Alice" });
+consola.error("DB Error", { code: 500, error: "Connection refused" });
+consola.debug("Query result", { count: 42, rows: [1, 2, 3] });
 
 // 🔁 Override Config Per Call
-log.info("No emoji, no timestamp", null, {
+consola.info("No emoji, no timestamp", null, {
   showTimestamp: false,
   emojis: false,
 });
 
-log.error("No file trace", { crash: true }, {
+consola.error("No file trace", { crash: true }, {
   fileTracing: false
 });
 
-log.debug("Minimalist", null, {
+consola.debug("Minimalist", null, {
   emojis: false,
   showTimestamp: false,
   fileTracing: false,
 });
 
 // 🧪 Complex Meta
-log.warn("Complex meta object", {
+consola.warn("Complex meta object", {
   user: {
     id: 123,
     email: "test@example.com",
@@ -50,9 +50,9 @@ log.warn("Complex meta object", {
 });
 
 // ❌ Passing non-object meta
-log.info("String as meta", "Just some text");
-log.error("Number as meta", 404);
-log.debug("Array as meta", [1, 2, 3]);
+consola.info("String as meta", "Just some text");
+consola.error("Number as meta", 404);
+consola.debug("Array as meta", [1, 2, 3]);
 
 // 🧪 Stack tracing test
 function triggerLog() {
@@ -60,7 +60,7 @@ function triggerLog() {
 }
 
 function anotherFunction() {
-  log.warn("Trace test", { step: "inside anotherFunction" });
+  consola.warn("Trace test", { step: "inside anotherFunction" });
 }
 
 triggerLog();

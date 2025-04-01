@@ -1,15 +1,15 @@
-import { log } from '../src/log';
+import { consola } from '../src/log';
 import assert from 'assert';
 
-console.log('Manual log test:');
-log.info('Info message');
-log.warn('Warning message', { id: 123 });
-log.error('Error occurred', { reason: 'Timeout' });
-log.debug('Debugging', { flag: true });
+console.log('Manual consola test:');
+consola.info('Info message');
+consola.warn('Warning message', { id: 123 });
+consola.error('Error occurred', { reason: 'Timeout' });
+consola.debug('Debugging', { flag: true });
 
-assert.ok(typeof log.info === 'function');
-assert.ok(typeof log.warn === 'function');
-assert.ok(typeof log.error === 'function');
-assert.ok(typeof log.debug === 'function');
+assert.ok(typeof consola.info === 'function');
+assert.ok(typeof consola.warn === 'function');
+assert.ok(typeof consola.error === 'function');
+assert.ok(typeof consola.debug === 'function');
 
-console.log('✅ All log methods exist.');
+console.log('✅ All consola methods exist.');

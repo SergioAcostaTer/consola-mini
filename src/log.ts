@@ -93,7 +93,7 @@ function format(
   return `${color}${baseLine}${metaFormatted}${reset}`;
 }
 
-export const log = {
+export const consola = {
   config: defaultConfig,
 
   setConfig: (newConfig: Partial<LoggerConfig>) => {

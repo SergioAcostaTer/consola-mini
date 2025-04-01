@@ -1,15 +1,15 @@
-# 🪶 tiny-logger
+# 🖋️ consola-mini
 
-**A lightweight, zero-dependency logger for Node.js** — featuring clean formatting, emojis, meta support, stack tracing, themes, and more.
+**A tiny, zero-dependency logger for Node.js backends** — colorful, clean, emoji-powered, and configurable.
 
-> Designed for developers who want clarity, color, and customization in their logs ✨
+> Designed for developers who want clarity, color, and customization in their logs — without the bloat ⚡
 
 ---
 
 ## 📦 Install
 
 ```bash
-npm install tiny-logger
+npm install consola-mini
 ```
 
 ---
@@ -17,20 +17,22 @@ npm install tiny-logger
 ## ⚡ Quick Start
 
 ```ts
-import { log } from 'tiny-logger';
+import { consola } from 'consola-mini';
 
-log.info('Server started');
-log.warn('Deprecated API usage');
-log.error('Something failed');
-log.debug('Fetched users', { count: 42 });
+consola.info('Server started');
+consola.warn('Deprecated API usage');
+consola.error('Something failed');
+consola.debug('Fetched users', { count: 42 });
 ```
 
 ---
 
 ## 🔧 Global Config
 
+Set global config once at app startup (applies everywhere):
+
 ```ts
-log.setConfig({
+consola.setConfig({
   showTimestamp: true,
   emojis: true,
   fileTracing: true,
@@ -44,60 +46,65 @@ log.setConfig({
 ## 🧪 Meta Support
 
 ```ts
-log.info('User login', { userId: 1, name: 'Alice' });
-log.error('DB Error', { code: 500, error: 'Connection refused' });
-log.debug('Query result', [1, 2, 3]);
-log.warn('String meta', 'Something went wrong');
+consola.info('User login', { userId: 1, name: 'Alice' });
+consola.error('DB Error', { code: 500, error: 'Connection refused' });
+consola.debug('Query result', [1, 2, 3]);
+consola.warn('String meta', 'Something went wrong');
 ```
 
-Meta can be:
-- JSON objects
+Meta supports:
+- Objects
 - Arrays
 - Strings
 - Numbers
 - Booleans
-- null or undefined
+- `null` or `undefined`
 
 ---
 
 ## 🧩 Per-call Overrides
 
 ```ts
-log.info('Minimal log', null, { showTimestamp: false, emojis: false });
+consola.info('No emoji, no timestamp', null, {
+  showTimestamp: false,
+  emojis: false,
+});
 
-log.error('No trace', { crash: true }, { fileTracing: false });
+consola.error('No trace', { crash: true }, {
+  fileTracing: false,
+});
 ```
 
 ---
 
 ## 🎨 Themes & Colors
 
-- `dark` (default): Bright, vibrant ANSI colors for dark terminals
-- `light`: More muted colors for visibility on light backgrounds
+- `dark` (default): Bright ANSI colors for dark terminals
+- `light`: More muted colors for light backgrounds
 
-| Level | Emoji | Dark Theme Color | Light Theme Color |
-|-------|-------|------------------|-------------------|
-| info  | ℹ️     | Bright Cyan      | Blue              |
-| warn  | ⚠️     | Bright Yellow    | Yellow            |
-| error | 🔥     | Bright Red       | Red               |
-| debug | 🐞     | Bright Magenta   | Magenta           |
+| Level | Emoji | Dark Theme       | Light Theme |
+|-------|-------|------------------|-------------|
+| info  | ℹ️     | Bright Cyan      | Blue        |
+| warn  | ⚠️     | Bright Yellow    | Yellow      |
+| error | 🔥     | Bright Red       | Red         |
+| debug | 🐞     | Bright Magenta   | Magenta     |
 
 ---
 
 ## 🔍 File Tracing
 
-Logs include file and line number by default:
+Logs include the file and line number by default:
 
 ```
 [2025-04-01 09:29:51] ℹ️  [INFO ]  Server started (src/index.ts:10:5)
 ```
 
-Disable it globally or per log call:
+Disable it globally or per log:
 
 ```ts
-log.setConfig({ fileTracing: false });
+consola.setConfig({ fileTracing: false });
 // or
-log.error('No trace', {}, { fileTracing: false });
+consola.error('No trace', {}, { fileTracing: false });
 ```
 
 ---
@@ -105,21 +112,19 @@ log.error('No trace', {}, { fileTracing: false });
 ## 🧠 API Reference
 
 ```ts
-log.setConfig(config: Partial<LoggerConfig>)
+consola.setConfig(config: Partial<LoggerConfig>)
 ```
-
 Update global defaults for all logs.
 
 ```ts
-log.info(message: string, meta?: Meta, config?: LoggerConfig)
-log.warn(...)
-log.error(...)
-log.debug(...)
+consola.info(message, meta?, config?);
+consola.warn(...);
+consola.error(...);
+consola.debug(...);
 ```
+Create logs with optional metadata and per-call config.
 
-Create a log of the given level with optional metadata and per-call config.
-
-### Types
+### Type Definitions
 
 ```ts
 type LogLevel = 'info' | 'warn' | 'error' | 'debug';
@@ -144,7 +149,7 @@ type Meta =
 
 ---
 
-## 🔥 Example Output
+## 🔥 Sample Output
 
 ```
 [2025-04-01 09:29:51] ℹ️  [INFO ]  User login (src/index.ts:15:3)
@@ -161,25 +166,27 @@ type Meta =
 
 ---
 
-## ✅ Why tiny-logger?
+## ✅ Why consola-mini?
 
 - ⚡ **Zero dependencies**
 - 🎨 **Colorful and emoji-powered**
 - 🧠 **Flexible and type-safe**
 - 📁 **Stack tracing built-in**
-- 🛠️ **Fully configurable per-call or globally**
+- 🔧 **Globally and per-call configurable**
+- 📦 **Tiny but mighty (just a few KB)**
 
 ---
 
 ## 🧱 Planned Features
 
-- [ ] `log.success()` and `log.fatal()`
-- [ ] File output (log to disk)
-- [ ] Custom color overrides
-- [ ] Test coverage & benchmarks
+- [ ] `consola.success()` and `consola.fatal()`
+- [ ] File output support (save logs to disk)
+- [ ] Custom color override system
+- [ ] Automatic theme detection
+- [ ] CLI integration & benchmarking
 
 ---
 
 ## 📄 License
 
-MIT — Made with ❤️ by [Sergio Acosta] (https://github.com/SergioAcostTer)
+MIT — Made with ❤️ by [Sergio Acosta](https://sergioaco.com)
