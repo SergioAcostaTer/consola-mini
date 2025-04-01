@@ -1,13 +1,34 @@
 {
-    "compilerOptions": {
-      "target": "ES2020",
-      "module": "CommonJS",
-      "outDir": "dist",
-      "strict": true,
-      "esModuleInterop": true,
-      "declaration": true,
-      "types": ["node"]
-    },
-    "include": ["src", "test", "index.ts"]
-  }
-  
+  "compilerOptions": {
+    /* ✔ Output Settings */
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": false,
+    "sourceMap": false,
+    "removeComments": true,
+
+    /* ✔ Targeting & Modules */
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* ✔ Type Safety */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* ✔ Type Support */
+    "types": ["node"],
+    "resolveJsonModule": true,
+
+    /* ✔ Project Cleanliness */
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "index.ts"],
+  "exclude": ["dist", "node_modules", "test", "**/*.test.ts"]
+}

@@ -7,12 +7,14 @@
   "exports": {
     ".": {
       "require": "./dist/log.js",
+      "import": "./dist/log.js",
       "types": "./dist/log.d.ts"
     }
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "index.ts"
   ],
   "scripts": {
     "build": "tsc",
