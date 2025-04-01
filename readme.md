@@ -1,4 +1,4 @@
-# 🪶 tiny-log
+# 🪶 tiny-logger
 
 **A lightweight, zero-dependency logger for Node.js** — featuring clean formatting, emojis, meta support, stack tracing, themes, and more.
 
@@ -9,7 +9,7 @@
 ## 📦 Install
 
 ```bash
-npm install tiny-log
+npm install tiny-logger
 ```
 
 ---
@@ -17,7 +17,7 @@ npm install tiny-log
 ## ⚡ Quick Start
 
 ```ts
-import { log } from 'tiny-log';
+import { log } from 'tiny-logger';
 
 log.info('Server started');
 log.warn('Deprecated API usage');
@@ -161,7 +161,7 @@ type Meta =
 
 ---
 
-## ✅ Why tiny-log?
+## ✅ Why tiny-logger?
 
 - ⚡ **Zero dependencies**
 - 🎨 **Colorful and emoji-powered**
