@@ -36,7 +36,6 @@ consola.setConfig({
   showTimestamp: true,
   emojis: true,
   fileTracing: true,
-  fontSize: 'large',
   theme: 'dark', // or 'light'
 });
 ```
@@ -131,7 +130,6 @@ type LogLevel = 'info' | 'warn' | 'error' | 'debug';
 
 interface LoggerConfig {
   showTimestamp?: boolean;
-  fontSize?: 'small' | 'medium' | 'large';
   fileTracing?: boolean;
   emojis?: boolean;
   theme?: 'light' | 'dark';
