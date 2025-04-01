@@ -1,0 +1,26 @@
+{
+  "name": "tiny-log",
+  "version": "0.0.1",
+  "description": "A zero-dependency, colorful and minimal logger for Node.js backends.",
+  "main": "dist/log.js",
+  "types": "dist/log.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node index.ts",
+    "test": "node ./test/log.test.js"
+  },
+  "keywords": [
+    "logger",
+    "console",
+    "colors",
+    "tiny",
+    "backend"
+  ],
+  "author": "Sergio Acosta Quintana",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.13.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
