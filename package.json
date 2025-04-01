@@ -40,10 +40,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SergioAcostTer/consola-mini.git"
+    "url": "https://github.com/SergioAcostaTer/consola-mini.git"
   },
   "bugs": {
-    "url": "https://github.com/SergioAcostTer/consola-mini/issues"
+    "url": "https://github.com/SergioAcostaTer/consola-mini/issues"
   },
   "homepage": "https://sergioaco.com",
   "devDependencies": {
