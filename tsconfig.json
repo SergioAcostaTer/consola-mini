@@ -3,7 +3,6 @@
     /* ✔ Output Settings */
     "outDir": "dist",
     "declaration": true,
-    "declarationMap": false,
     "sourceMap": false,
     "removeComments": true,
 

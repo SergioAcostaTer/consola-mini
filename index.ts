@@ -1,2 +1,1 @@
-// index.ts
-export { consola } from "./src/log";
+export { consola } from './src/log';
