@@ -1,6 +1,6 @@
 {
   "name": "consola-mini",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A zero-dependency, colorful and minimal console logger for Node.js backends.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,13 @@
     "test": "node ./test/log.test.js",
     "prepare": "npm run build"
   },
-  "keywords": ["logger", "typescript", "console", "minimal", "backend"],
+  "keywords": [
+    "logger",
+    "typescript",
+    "console",
+    "minimal",
+    "backend"
+  ],
   "author": {
     "name": "Sergio Acosta Quintana",
     "url": "https://sergioaco.com"
