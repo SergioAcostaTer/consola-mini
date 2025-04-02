@@ -1,16 +1,16 @@
 {
   "name": "consola-mini",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A zero-dependency, colorful and minimal console logger for Node.js backends.",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/log.cjs",
+  "module": "./dist/log.mjs",
+  "types": "./dist/log.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/log.cjs",
+      "import": "./dist/log.mjs",
+      "types": "./dist/log.d.ts"
     }
   },
   "files": [
@@ -18,7 +18,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup index.ts --format esm,cjs --dts --out-dir dist",
+    "build": "tsup",
     "dev": "ts-node index.ts",
     "test": "node ./test/log.test.js",
     "prepare": "npm run build"
